@@ -1,0 +1,36 @@
+<p>
+  cart works!
+</p>
+<table border="1">
+  <tr>
+          <td>name</td>
+          <td>price</td>
+          <td>company</td>
+          <td>add</td>
+  </tr>
+  <tr *ngFor="let p of product;let i=index">
+          <td>{{p.name}}</td>
+          <td>{{p.price}}</td>
+          <td>{{p.company}}</td>
+          <td><button click=add(i)>add</button></td>
+          
+        </tr>
+</table>
+<input type="button" (click)="view()" name="viewcart" class="btn btn-success"/>
+<input type="button" (click)="hide()" name="hidecart" class="btn btn-success"/>
+<table border="1" *ngIf="viewc"> 
+  <tr>
+      <td>name</td>
+      <td>price</td>
+      <td>company</td>
+      <td>remove</td>
+  </tr>
+  <tr *ngFor="let c of cart;let d=index">
+      <td>{{c.name}}</td>
+      <td>{{c.price}}</td>
+      <td>{{c.company}}</td>
+      <td><button (click)=remove(d)>remove</button></td>
+  
+    </tr>
+  </table>
+       
